@@ -17,6 +17,7 @@ build/
 
 # Strapi
 .tmp/
+.strapi/
 .strapi-updater.json
 exports/
 types/generated/
