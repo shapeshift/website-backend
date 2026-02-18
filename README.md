@@ -1,61 +1,88 @@
-# 🚀 Getting started with Strapi
+# ShapeShift Website Backend
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+Strapi 5 CMS backend powering the ShapeShift website.
 
-### `develop`
+## Requirements
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+- Node 24 — use `nvm use` or `fnm use` (see `.nvmrc`)
+- [Corepack](https://nodejs.org/api/corepack.html) for Yarn 4 — run once: `corepack enable`
 
+## First-time Setup
+
+```bash
+# 1. Install dependencies
+yarn install
+
+# 2. Configure environment
+cp .env.example .env
+# Edit .env and fill in the required values (see Environment section below)
+
+# 3. Generate TypeScript types from content schemas
+yarn types
 ```
-npm run develop
-# or
+
+## Development
+
+```bash
 yarn develop
 ```
 
-### `start`
+Starts Strapi with auto-reload enabled. The admin panel is available at `http://localhost:1337/admin`.
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
+On first run, Strapi will prompt you to create an admin account.
 
-```
-npm run start
-# or
+## Production
+
+```bash
+# Build the admin panel (required before starting)
+yarn build
+
+# Start the server
 yarn start
 ```
 
-### `build`
+## Scripts
 
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
+| Command | Description |
+|---|---|
+| `yarn develop` | Start with auto-reload (development) |
+| `yarn build` | Build the admin panel |
+| `yarn start` | Start without auto-reload (production) |
+| `yarn types` | Regenerate TypeScript types from content-type schemas |
+| `yarn clean` | Remove all generated files and node_modules for a fresh install |
 
+## Environment Variables
+
+| Variable | Description |
+|---|---|
+| `HOST` | Server host (default: `0.0.0.0`) |
+| `PORT` | Server port (default: `1337`) |
+| `APP_KEYS` | Comma-separated list of secret keys used for session encryption |
+| `API_TOKEN_SALT` | Salt used to generate API tokens |
+| `ADMIN_JWT_SECRET` | Secret used to sign admin JWTs |
+| `JWT_SECRET` | Secret used to sign user JWTs |
+| `TRANSFER_TOKEN_SALT` | Salt used for data transfer tokens |
+| `DATABASE_CLIENT` | Database driver: `sqlite` (default), `postgres`, or `mysql` |
+| `DATABASE_URL` | Postgres connection string (postgres only) |
+| `DATABASE_HOST` | Database host |
+| `DATABASE_PORT` | Database port |
+| `DATABASE_NAME` | Database name |
+| `DATABASE_USERNAME` | Database user |
+| `DATABASE_PASSWORD` | Database password |
+| `DATABASE_SSL` | Enable SSL for database connection (`true`/`false`) |
+
+## Database
+
+**Development** uses SQLite by default — no configuration needed, the database file is created at `.tmp/data.db`.
+
+**Production** (Railway) uses PostgreSQL. Set `DATABASE_CLIENT=postgres` and provide either `DATABASE_URL` or the individual `DATABASE_*` variables in your environment.
+
+## Content Types
+
+After modifying content-type schemas in the Strapi admin or in `src/api/`, regenerate TypeScript types:
+
+```bash
+yarn types
 ```
-npm run build
-# or
-yarn build
-```
 
-## ⚙️ Deployment
-
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
-
-```
-yarn strapi deploy
-```
-
-## 📚 Learn more
-
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
-
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
-
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
-
----
-
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+Generated types are written to `types/generated/` and should not be committed.

@@ -20,7 +20,7 @@ build/
 .strapi/
 .strapi-updater.json
 exports/
-types/generated/
+types/
 
 # Database
 *.db
