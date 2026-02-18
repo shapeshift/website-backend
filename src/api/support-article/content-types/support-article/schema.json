@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "support_articles",
+  "info": {
+    "singularName": "support-article",
+    "pluralName": "support-articles",
+    "displayName": "Support article",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "featuredImg": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "summary": {
+      "type": "text"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "tags": {
+      "type": "customField",
+      "default": "[]",
+      "options": [
+        "Tutorial",
+        "ShapeShift App",
+        "Native Wallet",
+        "Other Wallets",
+        "THORChain",
+        "Maya Protocol",
+        "Mobile"
+      ],
+      "customField": "plugin::multi-select.multi-select"
+    }
+  }
+}

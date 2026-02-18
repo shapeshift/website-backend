@@ -82,7 +82,10 @@
         "EVM",
         "Cosmos",
         "Bitcoin",
-        "Solana"
+        "Solana",
+        "Dogecoin",
+        "Litecoin",
+        "Zcash"
       ]
     }
   }

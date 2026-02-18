@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_protocol_cards",
+  "info": {
+    "displayName": "protocolCard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

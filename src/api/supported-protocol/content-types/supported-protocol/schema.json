@@ -37,6 +37,23 @@
     },
     "isFeatured": {
       "type": "boolean"
+    },
+    "features": {
+      "type": "customField",
+      "default": "[]",
+      "options": [
+        "OG DeFi Platforms",
+        "Shift to DeFi on the go",
+        "Get Paid to Trade",
+        "Powered by Portals"
+      ],
+      "customField": "plugin::multi-select.multi-select"
+    },
+    "cards": {
+      "type": "component",
+      "repeatable": true,
+      "max": 3,
+      "component": "blocks.protocol-card"
     }
   }
 }

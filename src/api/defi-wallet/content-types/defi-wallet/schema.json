@@ -39,6 +39,11 @@
       "repeatable": false,
       "component": "sections.cards-row",
       "required": true
+    },
+    "cards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.protocol-card"
     }
   }
 }
