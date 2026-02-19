@@ -1,4 +1,4 @@
-export default ({ env }) => ({
+export default () => ({
   // TODO: configure upload provider for external file storage
   // e.g. @strapi/provider-upload-aws-s3 for S3/Cloudflare R2,
   //      @strapi/provider-upload-cloudinary for Cloudinary
@@ -8,4 +8,4 @@ export default ({ env }) => ({
   //     providerOptions: {},
   //   },
   // },
-});
+})

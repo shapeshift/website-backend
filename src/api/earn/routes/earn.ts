@@ -1,7 +1,3 @@
-/**
- * earn router
- */
+import { factories } from '@strapi/strapi'
 
-import { factories } from '@strapi/strapi';
-
-export default factories.createCoreRouter('api::earn.earn');
+export default factories.createCoreRouter('api::earn.earn')

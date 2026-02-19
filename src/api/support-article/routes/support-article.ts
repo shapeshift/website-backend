@@ -1,7 +1,3 @@
-/**
- * support-article router
- */
+import { factories } from '@strapi/strapi'
 
-import { factories } from '@strapi/strapi';
-
-export default factories.createCoreRouter('api::support-article.support-article');
+export default factories.createCoreRouter('api::support-article.support-article')

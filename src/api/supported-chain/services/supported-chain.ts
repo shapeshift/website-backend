@@ -1,7 +1,3 @@
-/**
- * supported-chain service
- */
+import { factories } from '@strapi/strapi'
 
-import { factories } from '@strapi/strapi';
-
-export default factories.createCoreService('api::supported-chain.supported-chain');
+export default factories.createCoreService('api::supported-chain.supported-chain')

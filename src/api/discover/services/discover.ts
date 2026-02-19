@@ -1,7 +1,3 @@
-/**
- * discover service
- */
+import { factories } from '@strapi/strapi'
 
-import { factories } from '@strapi/strapi';
-
-export default factories.createCoreService('api::discover.discover');
+export default factories.createCoreService('api::discover.discover')
