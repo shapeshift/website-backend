@@ -51,31 +51,13 @@ yarn start
 | `yarn types` | Regenerate TypeScript types from content-type schemas |
 | `yarn clean` | Remove all generated files and node_modules for a fresh install |
 
-## Environment Variables
-
-| Variable | Description |
-|---|---|
-| `HOST` | Server host (default: `0.0.0.0`) |
-| `PORT` | Server port (default: `1337`) |
-| `APP_KEYS` | Comma-separated list of secret keys used for session encryption |
-| `API_TOKEN_SALT` | Salt used to generate API tokens |
-| `ADMIN_JWT_SECRET` | Secret used to sign admin JWTs |
-| `JWT_SECRET` | Secret used to sign user JWTs |
-| `TRANSFER_TOKEN_SALT` | Salt used for data transfer tokens |
-| `DATABASE_CLIENT` | Database driver: `sqlite` (default), `postgres`, or `mysql` |
-| `DATABASE_URL` | Postgres connection string (postgres only) |
-| `DATABASE_HOST` | Database host |
-| `DATABASE_PORT` | Database port |
-| `DATABASE_NAME` | Database name |
-| `DATABASE_USERNAME` | Database user |
-| `DATABASE_PASSWORD` | Database password |
-| `DATABASE_SSL` | Enable SSL for database connection (`true`/`false`) |
-
 ## Database
 
 **Development** uses SQLite by default — no configuration needed, the database file is created at `.tmp/data.db`.
 
-**Production** (Railway) uses PostgreSQL. Set `DATABASE_CLIENT=postgres` and provide either `DATABASE_URL` or the individual `DATABASE_*` variables in your environment.
+**Production** (Railway) uses PostgreSQL. Set `DATABASE_CLIENT=postgres` and `DATABASE_URL` to the connection string provided by the Railway Postgres plugin.
+
+SSL is configured via the connection string directly. Append `?sslmode=require` to `DATABASE_URL` if connecting over a public URL rather than Railway's private networking.
 
 ## Content Types
 
