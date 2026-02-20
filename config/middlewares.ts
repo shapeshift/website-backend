@@ -8,8 +8,8 @@ export default ({ env }) => [
         useDefaults: true,
         directives: {
           'connect-src': ["'self'", 'https:'],
-          'img-src': ["'self'", 'data:', 'blob:', env('AWS_ENDPOINT', '')],
-          'media-src': ["'self'", 'data:', 'blob:', env('AWS_ENDPOINT', '')],
+          'img-src': ["'self'", 'data:', 'blob:', env('AWS_BASE_URL', '')],
+          'media-src': ["'self'", 'data:', 'blob:', env('AWS_BASE_URL', '')],
           upgradeInsecureRequests: null,
         },
       },
