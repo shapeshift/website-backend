@@ -1,7 +1,20 @@
 export default ({ env }) => [
   'strapi::logger',
   'strapi::errors',
-  'strapi::security',
+  {
+    name: 'strapi::security',
+    config: {
+      contentSecurityPolicy: {
+        useDefaults: true,
+        directives: {
+          'connect-src': ["'self'", 'https:'],
+          'img-src': ["'self'", 'data:', 'blob:', env('AWS_ENDPOINT', '')],
+          'media-src': ["'self'", 'data:', 'blob:', env('AWS_ENDPOINT', '')],
+          upgradeInsecureRequests: null,
+        },
+      },
+    },
+  },
   {
     name: 'strapi::cors',
     config: {
