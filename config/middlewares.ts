@@ -18,7 +18,10 @@ export default ({ env }) => [
   {
     name: 'strapi::cors',
     config: {
-      origin: env.array('CORS_ORIGINS', ['http://localhost:3000']),
+      origin: env.array('CORS_ORIGINS', [
+        'http://localhost:3000',
+        'https://website-frontend-production-7d23.up.railway.app',
+      ]),
       credentials: true,
     },
   },
