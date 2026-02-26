@@ -21,6 +21,7 @@ export default ({ env }) => [
       origin: env.array('CORS_ORIGINS', [
         'http://localhost:3000',
         'https://shapeshift.com',
+        'https://website-frontend-develop.up.railway.app',
         'https://website-frontend-production-7d23.up.railway.app',
       ]),
       credentials: true,
