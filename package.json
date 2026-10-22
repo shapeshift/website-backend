@@ -36,11 +36,19 @@
     "typescript-eslint": "^8.56.0"
   },
   "engines": {
-    "node": ">=18.0.0 <=24.x.x",
+    "node": ">=22.23.4 <23 || >=24.22.1 <25",
     "yarn": ">=4.0.0"
   },
   "strapi": {
     "uuid": "197f4d73-d37f-42d6-8784-bda83d82651d"
   },
-  "packageManager": "yarn@4.12.0"
+  "packageManager": "yarn@4.12.0",
+  "resolutions": {
+    "@modelcontextprotocol/sdk": "1.32.0",
+    "follow-redirects": "1.16.1",
+    "markdown-it": "14.3.3",
+    "sanitize-html": "2.18.1",
+    "hono": "4.13.11",
+    "vite": "6.4.4"
+  }
 }
