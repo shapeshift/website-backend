@@ -50,6 +50,10 @@ yarn build
 yarn start
 ```
 
+## Media Uploads
+
+The media library accepts images, video and PDF only (see `security` in `config/plugins.ts`).
+
 ## Scripts
 
 | Command | Description |
