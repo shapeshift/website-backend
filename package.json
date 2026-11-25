@@ -8,7 +8,7 @@
     "develop": "strapi develop",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --cache --fix",
-    "start": "strapi start",
+    "start": "NODE_ENV=production strapi start",
     "types": "strapi ts:generate-types"
   },
   "dependencies": {

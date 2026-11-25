@@ -56,7 +56,7 @@ yarn start
 |---|---|
 | `yarn develop` | Start with auto-reload (development) |
 | `yarn build` | Build the admin panel |
-| `yarn start` | Start without auto-reload (production) |
+| `yarn start` | Start without auto-reload (`NODE_ENV=production`) |
 | `yarn types` | Regenerate TypeScript types from content-type schemas |
 | `yarn clean` | Remove all generated files and node_modules for a fresh install |
 
