@@ -18,6 +18,6 @@ export default tseslint.config([
     },
   },
   {
-    ignores: ['node_modules/', 'dist/', '.tmp/', 'types/'],
+    ignores: ['node_modules/', 'dist/', '.tmp/', '.strapi/', 'types/'],
   },
 ])

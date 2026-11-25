@@ -29,7 +29,16 @@ yarn develop
 
 Starts Strapi with auto-reload enabled. The admin panel is available at `http://localhost:1337/admin`.
 
-On first run, Strapi will prompt you to create an admin account.
+### Admin account
+
+No admin account is created automatically. On a fresh database, either register the first admin at `http://localhost:1337/admin`, or create one from the CLI:
+
+```bash
+# Prompts for email, password, first and last name
+yarn strapi admin:create-user
+```
+
+The user is created as a super admin. Passwords must be at least 8 characters and include a lowercase letter, an uppercase letter and a number.
 
 ## Production
 
@@ -41,13 +50,17 @@ yarn build
 yarn start
 ```
 
+## Media Uploads
+
+The media library accepts images, video and PDF only (see `security` in `config/plugins.ts`).
+
 ## Scripts
 
 | Command | Description |
 |---|---|
 | `yarn develop` | Start with auto-reload (development) |
 | `yarn build` | Build the admin panel |
-| `yarn start` | Start without auto-reload (production) |
+| `yarn start` | Start without auto-reload (`NODE_ENV=production`) |
 | `yarn types` | Regenerate TypeScript types from content-type schemas |
 | `yarn clean` | Remove all generated files and node_modules for a fresh install |
 
